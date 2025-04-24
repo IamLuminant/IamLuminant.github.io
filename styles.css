@@ -1,0 +1,142 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 56px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #007bff;
+    margin: 15px auto;
+}
+
+/* Hero Section */
+.hero {
+    padding: 150px 0;
+}
+
+.hero-content {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Image */
+img {
+    max-width: 50%;
+}
+
+/* About Section */
+#about {
+    background-color: #fff;
+}
+
+/* Skills Section */
+.skill-item h5 {
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+#contactForm {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.social-links a {
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px);
+    color: #007bff !important;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar.navbar-scrolled {
+    background-color: #343a40 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure navbar stays dark when collapsed */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: #343a40;
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        padding-top: 56px;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .hero {
+        padding: 100px 0;
+    }
+    
+    h2::after {
+        width: 60px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 80px 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}

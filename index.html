@@ -1,8 +1,288 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Home</h1>
-    <p>Welcome to the home page.</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Boon Burns</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">                                                                        
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero bg-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Content -->
+                <div class="col-md-6 text-md-start text-center">
+                    <h1 class="display-4">Boon Burns</h1>
+                    <p class="lead">Game Developer and Music Producer</p>
+                    <a href="#projects" class="btn btn-light btn-lg me-2">View My Work</a>
+                    <a href="Boon_Burns_Resume.pdf" class="btn btn-light btn-lg">Download Resume</a>
+                </div>
+                <!-- Right Image -->
+                <div class="col-md-6 text-center">
+                    <img src="me.jpg" alt="Profile" class="rounded-circle">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">About Me</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>Who I Am</h3>
+                    <p>I'm a passionate game developer with 2 years of experience creating indie games in both Unreal Engine and Unity. 
+                        I specialize in game system development but also have experience with particle systems, asset creation, and game design.</p>
+                    <p>When I'm not working, you can find me making music, drawing, writing, or experimenting with game development.</p>
+                </div>
+                <div class="col-lg-6">
+                    <h3>My Journey</h3>
+                    <p>I started my career as an indie music producer before discovering my love for game dev. 
+                        I then went to BSU to study GIMM and learned how to create games and websites.
+                        In my spare time, I also learned another game engine, Unreal.
+                        I've also worked with other people to bring their projects to life.
+                        Throughout this time, I have continued to learn about music production and have grown as a musician and producer.
+                    </p>
+                    <p>I believe in continuous learning and staying updated with the latest technologies to deliver the best games and projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">My Projects</h2>
+            <div class="row">
+                <!-- Project 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Just a normal gardening game</h5>       
+                            <a href="https://jojozune13.itch.io/garden" class="btn btn-primary">View Project On Itch.io</a>    
+                            <p class="card-text">A game jam project with one other person over the span of two days.
+                                In the game, you play as a gardener who has to grow plants and keep them alive, 
+                                but during the night monsters come out and try to destroy you and your plants.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Luminant Expansion Plugin</h5>
+                            <a href="#" class="btn btn-primary">Releasing Soon</a>
+                            <p class="card-text">
+                                An Unreal Engine 5 plugin that give you the basics of an inventory, item, interaction, and ability system.
+                                Future updates will include a crafting system, save system, storage system, water and buoyancy system, and more.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Magic Ability Database</h5>
+                            <a href="#" class="btn btn-primary">Releasing Soon</a>
+                            <p class="card-text">A website for creating magic abilities using node.js and mysql. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Project 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Magic</h5>     
+                            <a href="#" class="btn btn-primary">Releasing Soon</a>      
+                            <p class="card-text">A VR Unity game where you can move your arms around to cast spells. 
+                                Explore the world and fight enemies using your magic powers to find more magic.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Spark</h5>
+                            <a href="#" class="btn btn-primary">Unknown Release Date</a>
+                            <p class="card-text">
+                                A game similar to Overwatch 2 but with 90% melee made in Unreal Engine 5 with my friend and a small team.
+                                The game is a 3D arena shooter where you can play as different characters with different abilities and weapons.
+                                The game is in the early stages of development and will be released on Steam when finished.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Luminant</h5>
+                            <a href="https://www.youtube.com/@iamluminant" class="btn btn-primary">View Channel</a>
+                            <p class="card-text">
+                                Luminant is my brand for myself and my YouTube channel to show my music and some game development tutorials. 
+                            </p>
+                            <img src="Luminant.jpg" class="card-img-top img-fluid" alt="Project 6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">My Skills</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="text-center mb-4">Web Development Skills</h3>
+                    <div class="skill-item mb-3">
+                        <h5>HTML/CSS</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <h5>JavaScript</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <h5>React</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <h5>Node.js</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="text-center mb-4">Game Development Skills</h3>
+                    <div class="skill-item mb-3">
+                        <h5>C# with Unity</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <h5>Unreal Engine with C++ and Blueprint</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <h5>Roblox Studio and Lua</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <h5>Debugging and Optimization</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="text-center mb-4">Music Production Skills</h3>
+                    <div class="skill-item mb-3">
+                        <h5>Composition</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <h5>Music Theory</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <h5>Sound Design</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <h5>Mixing and Mastering</h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="text-center mb-5">Get In Touch</h2>
+            <div class="row justify-content-center">
+                    <div class="social-links mb-3">
+                        <a href="https://github.com/IamLuminant" class="text-black mx-2"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="https://www.linkedin.com/in/boonburns/" class="text-black mx-2"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="https://www.instagram.com/iamluminant/?hl=en" class="text-black mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="mailto:boonburns@gmail.com" class="text-black mx-2"><i class="fas fa-envelope fa-2x"></i></a>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
 </html>
