@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Indigo.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -15,23 +17,39 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Boon Burns</a>
+            <a class="navbar-brand" href="#">Luminant</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">                                                                        
-                        <a class="nav-link" href="#about">About</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="bookmarksDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Bookmarks
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="bookmarksDropdown">
+                            <li><a class="dropdown-item" href="#projects">Projects</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#lep-project">Luminant Expansion Plugin</a></li>
+                            <li><a class="dropdown-item" href="#luminant-brand">Luminant Brand</a></li>
+                            <li><a class="dropdown-item" href="#magic-vr">Magic VR</a></li>
+                            <li><a class="dropdown-item" href="#gardening-game">Just a normal gardening game</a></li>
+                            <li><a class="dropdown-item" href="#magic-database">Magic Ability Database</a></li>
+                            <li><a class="dropdown-item" href="#spark">Spark</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#about">About</a></li>
+                            <li><a class="dropdown-item" href="#contact">Contact</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="pagesDropdown">
+                            <li><a class="dropdown-item" href="project_pages/LEP_project.html">LEP Project</a></li>
+                            <li><a class="dropdown-item" href="project_pages/magic_project.html">Magic Project</a></li>
+                            <li><a class="dropdown-item" href="project_pages/music_project.html">Music Projects</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -44,18 +62,230 @@
             <div class="row align-items-center">
                 <!-- Left Content -->
                 <div class="col-md-6 text-md-start text-center">
-                    <h1 class="display-4">Boon Burns</h1>
+                    <h1 class="display-4">Boon Burns (Luminant)</h1>
                     <p class="lead">Game Developer and Music Producer</p>
-                    <a href="#projects" class="btn btn-light btn-lg me-2">View My Work</a>
-                    <a href="Boon_Burns_Resume.pdf" class="btn btn-light btn-lg">Download Resume</a>
-                </div>
-                <!-- Right Image -->
-                <div class="col-md-6 text-center">
-                    <img src="me.jpg" alt="Profile" class="rounded-circle">
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">My Projects</h2>
+        </div>
+    </section>
+
+    <!-- Project 1: Luminant Expansion Plugin -->
+    <section id="lep-project" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center">
+                    <div class="bg-light rounded p-4">
+                        <i class="fas fa-puzzle-piece fa-5x text-primary mb-3"></i>
+                        <p class="text-muted">Plugin Interface</p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <h3 class="mb-3">Luminant's Expansions Plugin</h3>
+                    <p class="lead">An Unreal Engine 5 plugin that provides an in-depth inventory, item, interaction, and ability system.</p>
+                    <p>This comprehensive plugin serves as a foundation for game developers looking to implement 
+                       essential gameplay systems quickly and efficiently. Built with modularity in mind, 
+                       it allows for easy customization and extension.</p>
+                    <p><strong>Future Updates:</strong> Crafting system, save system, storage system, 
+                       water and buoyancy system, and more advanced features.</p>
+                    <div class="mb-3">
+                        <span class="badge bg-secondary me-2">Unreal Engine 5</span>
+                        <span class="badge bg-secondary me-2">C++</span>
+                        <span class="badge bg-secondary me-2">Blueprint</span>
+                        <span class="badge bg-secondary">Plugin Development</span>
+                        <span class="badge bg-secondary me-2">Item System</span>
+                        <span class="badge bg-secondary me-2">Inventory System</span>
+                        <span class="badge bg-secondary me-2">Interaction System</span>
+                        <span class="badge bg-secondary me-2">Ability System</span>
+                    </div>
+                    <a href="project_pages/LEP_project.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-info-circle me-2"></i>View Detailed Page
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 2: Luminant Brand -->
+    <section id="luminant-brand" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="mb-3">Luminant</h3>
+                    <p class="lead">My personal brand and YouTube channel showcasing music production and game development.</p>
+                    <p>Luminant represents my creative identity across multiple platforms, featuring original music 
+                       compositions, game development tutorials, and behind-the-scenes content. The channel serves 
+                       as a hub for aspiring developers and music producers.</p>
+                    <p><strong>Content Types:</strong> Music production tutorials, game development guides, 
+                       original compositions, and creative process documentation.</p>
+                    <div class="mb-3">
+                        <span class="badge bg-secondary me-2">Music</span>
+                        <span class="badge bg-secondary me-2">Tutorials</span>
+                        <span class="badge bg-secondary me-2">Entertainment</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a href="https://www.youtube.com/@iamluminant" class="btn btn-danger btn-lg">
+                            <i class="fab fa-youtube me-2"></i>View Channel
+                        </a>
+                        <a href="project_pages/music_project.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-music me-2"></i>View Music Projects
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <img src="Luminant.jpg" class="img-fluid rounded shadow" alt="Luminant Brand">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 3: Magic VR Game -->
+    <section id="magic-vr" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center">
+                    <div class="bg-light rounded p-4">
+                        <i class="fas fa-magic fa-5x text-purple mb-3"></i>
+                        <p class="text-muted">VR Magic System</p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <h3 class="mb-3">Magic VR</h3>
+                    <p class="lead">A VR Unity game where you can move your arms around to cast spells.</p>
+                    <p>Explore an immersive magical world and fight enemies using intuitive hand gestures 
+                       to cast spells. The game features advanced motion tracking and physics-based magic 
+                       systems that respond to natural arm movements.</p>
+                    <p><strong>Key Features:</strong> Gesture-based spellcasting, immersive world exploration, 
+                       dynamic enemy encounters, and progressive magic discovery system.</p>
+                    <div class="mb-3">
+                        <span class="badge bg-secondary me-2">Unreal Engine</span>
+                        <span class="badge bg-secondary me-2">VR Development</span>
+                        <span class="badge bg-secondary me-2">C++</span>
+                        <span class="badge bg-secondary">Blueprint</span>
+                        <span class="badge bg-secondary me-2">Motion Tracking</span>
+                    </div>
+                    <a href="project_pages/magic_project.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-info-circle me-2"></i>View Detailed Page
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 4: Just a normal gardening game -->
+    <section id="gardening-game" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="mb-3">Just a normal gardening game</h3>
+                    <p class="lead">A game jam project with one other person over the span of two days.</p>
+                    <p>In the game, you play as a gardener who has to grow plants and keep them alive, 
+                       but during the night monsters come out and try to destroy you and your plants. 
+                       This project showcased our ability to work under tight deadlines while creating 
+                       an engaging gameplay experience.</p>
+                    <div class="mb-3">
+                        <span class="badge bg-secondary me-2">Unreal Engine</span>
+                        <span class="badge bg-secondary me-2">Blueprint</span>
+                        <span class="badge bg-secondary me-2">Game Jam</span>
+                        <span class="badge bg-secondary">3D</span>
+                    </div>
+                    <a href="https://jojozune13.itch.io/garden" class="btn btn-primary btn-lg">
+                        <i class="fas fa-external-link-alt me-2"></i>View Project On Itch.io
+                    </a>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <!-- Placeholder for project image -->
+                    <div class="bg-white rounded p-4">
+                        <i class="fas fa-seedling fa-5x text-success mb-3"></i>
+                        <p class="text-muted">Game Screenshot</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 5: Magic Ability Database -->
+    <section id="magic-database" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center">
+                    <div class="bg-light rounded p-4">
+                        <i class="fas fa-database fa-5x text-info mb-3"></i>
+                        <p class="text-muted">Database Interface</p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <h3 class="mb-3">Magic Ability Database</h3>
+                    <p class="lead">A web application for creating and managing magic abilities using Node.js and MySQL.</p>
+                    <p>This project demonstrates my full-stack development skills, combining a robust backend 
+                       with an intuitive frontend interface. Users can create, categorize, and manage 
+                       magical abilities with detailed attributes and relationships.</p>
+                    <div class="mb-3">
+                        <span class="badge bg-secondary me-2">Node.js</span>
+                        <span class="badge bg-secondary me-2">MySQL</span>
+                        <span class="badge bg-secondary me-2">JavaScript</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary btn-lg disabled">
+                        <i class="fas fa-clock me-2"></i>Releasing Soon
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project 6: Spark -->
+    <section id="spark" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="mb-3">Spark</h3>
+                    <p class="lead">A 3D arena shooter similar to Overwatch 2 but with 90% melee combat.</p>
+                    <p>Developed in Unreal Engine 5 with my friend and a small dedicated team, Spark reimagines 
+                       the arena shooter genre with a focus on melee combat. Players can choose from different 
+                       characters, each with unique abilities and weapons designed for close-quarters combat.</p>
+                    <p><strong>Current Status:</strong> Early development stage with core mechanics implemented. 
+                       The game will feature multiple game modes, character progression, and competitive play.</p>
+                    <div class="mb-3">
+                        <span class="badge bg-secondary me-2">Unreal Engine</span>
+                        <span class="badge bg-secondary me-2">C++</span>
+                        <span class="badge bg-secondary me-2">Blueprint</span>
+                        <span class="badge bg-secondary">Multiplayer</span>
+                    </div>
+                    <a href="#" class="btn btn-secondary btn-lg disabled">
+                        <i class="fas fa-hourglass-half me-2"></i>Unknown Release Date
+                    </a>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="bg-white rounded p-4">
+                        <i class="fas fa-fist-raised fa-5x text-danger mb-3"></i>
+                        <p class="text-muted">Combat System</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="text-center mb-5">Get In Touch</h2>
+            <div class="row justify-content-center">
+                    <div class="social-links mb-3">
+                        <a href="https://github.com/IamLuminant" class="text-black mx-2" title="GitHub"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="https://www.linkedin.com/in/boonburns/" class="text-black mx-2" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="Boon_Burns_Resume.pdf" class="text-black mx-2" title="Download Resume"><i class="fas fa-file-pdf fa-2x"></i></a>
+                        <a href="https://www.instagram.com/iamluminant/?hl=en" class="text-black mx-2" title="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="mailto:boonburns@gmail.com" class="text-black mx-2" title="Email"><i class="fas fa-envelope fa-2x"></i></a>
+                    </div>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
     <section id="about" class="py-5">
@@ -82,201 +312,10 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">My Projects</h2>
-            <div class="row">
-                <!-- Project 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Just a normal gardening game</h5>       
-                            <a href="https://jojozune13.itch.io/garden" class="btn btn-primary">View Project On Itch.io</a>    
-                            <p class="card-text">A game jam project with one other person over the span of two days.
-                                In the game, you play as a gardener who has to grow plants and keep them alive, 
-                                but during the night monsters come out and try to destroy you and your plants.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Luminant Expansion Plugin</h5>
-                            <a href="#" class="btn btn-primary">Releasing Soon</a>
-                            <p class="card-text">
-                                An Unreal Engine 5 plugin that give you the basics of an inventory, item, interaction, and ability system.
-                                Future updates will include a crafting system, save system, storage system, water and buoyancy system, and more.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Magic Ability Database</h5>
-                            <a href="#" class="btn btn-primary">Releasing Soon</a>
-                            <p class="card-text">A website for creating magic abilities using node.js and mysql. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <!-- Project 4 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Magic</h5>     
-                            <a href="#" class="btn btn-primary">Releasing Soon</a>      
-                            <p class="card-text">A VR Unity game where you can move your arms around to cast spells. 
-                                Explore the world and fight enemies using your magic powers to find more magic.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 5 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Spark</h5>
-                            <a href="#" class="btn btn-primary">Unknown Release Date</a>
-                            <p class="card-text">
-                                A game similar to Overwatch 2 but with 90% melee made in Unreal Engine 5 with my friend and a small team.
-                                The game is a 3D arena shooter where you can play as different characters with different abilities and weapons.
-                                The game is in the early stages of development and will be released on Steam when finished.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 6 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Luminant</h5>
-                            <a href="https://www.youtube.com/@iamluminant" class="btn btn-primary">View Channel</a>
-                            <p class="card-text">
-                                Luminant is my brand for myself and my YouTube channel to show my music and some game development tutorials. 
-                            </p>
-                            <img src="Luminant.jpg" class="card-img-top img-fluid" alt="Project 6">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">My Skills</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <h3 class="text-center mb-4">Web Development Skills</h3>
-                    <div class="skill-item mb-3">
-                        <h5>HTML/CSS</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-3">
-                        <h5>JavaScript</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-3">
-                        <h5>React</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-3">
-                        <h5>Node.js</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 65%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h3 class="text-center mb-4">Game Development Skills</h3>
-                    <div class="skill-item mb-3">
-                        <h5>C# with Unity</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-3">
-                        <h5>Unreal Engine with C++ and Blueprint</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-3">
-                        <h5>Roblox Studio and Lua</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-3">
-                        <h5>Debugging and Optimization</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 80%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h3 class="text-center mb-4">Music Production Skills</h3>
-                    <div class="skill-item mb-3">
-                        <h5>Composition</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-3">
-                        <h5>Music Theory</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-3">
-                        <h5>Sound Design</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item mb-3">
-                        <h5>Mixing and Mastering</h5>
-                        <div class="progress">
-                            <div class="progress-bar bg-primary" role="progressbar" style="width: 60%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container text-center">
-            <h2 class="text-center mb-5">Get In Touch</h2>
-            <div class="row justify-content-center">
-                    <div class="social-links mb-3">
-                        <a href="https://github.com/IamLuminant" class="text-black mx-2"><i class="fab fa-github fa-2x"></i></a>
-                        <a href="https://www.linkedin.com/in/boonburns/" class="text-black mx-2"><i class="fab fa-linkedin fa-2x"></i></a>
-                        <a href="https://www.instagram.com/iamluminant/?hl=en" class="text-black mx-2"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="mailto:boonburns@gmail.com" class="text-black mx-2"><i class="fas fa-envelope fa-2x"></i></a>
-                    </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
         <div class="container text-center">
-            <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+            <p>&copy; 2025 Luminant. All rights reserved.</p>
         </div>
     </footer>
 
