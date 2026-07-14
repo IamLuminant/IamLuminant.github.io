@@ -37,6 +37,21 @@ h2::after {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Skills Bubbles in Hero */
+.skills-bubbles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skills-bubbles .badge {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 0.5em 1em;
+    font-size: 0.9rem;
+}
+
 /* Image */
 img {
     max-width: 50%;
@@ -93,6 +108,27 @@ html {
         border-radius: 5px;
         margin-top: 10px;
     }
+}
+
+/* Dropdown hover functionality */
+.dropdown:hover > .dropdown-menu,
+.dropend:hover > .dropdown-menu,
+.dropstart:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0; /* remove the gap so it doesn't close accidentally */
+}
+
+.dropend:hover > .dropdown-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.dropstart:hover > .dropdown-menu {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    left: auto;
 }
 
 /* Media Queries */
