@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghibli Style Game - Project Details</title>
+    <link rel="icon" type="image/png" href="../Indigo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Luminant</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="bookmarksDropdown" role="button" data-bs-toggle="dropdown">
+                            Bookmarks
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#overview">Overview</a></li>
+                            <li><a class="dropdown-item" href="#features">Features</a></li>
+                            <li><a class="dropdown-item" href="#design">Design</a></li>
+                            <li><a class="dropdown-item" href="#media">Media</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../index.html">Home</a></li>
+                            <li class="dropstart">
+                                <a class="dropdown-item dropdown-toggle" href="#">Projects</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="LEP_project.html">LEP Project</a></li>
+                                    <li><a class="dropdown-item" href="magic_project.html">Spellcaster VR</a></li>
+                                    <li><a class="dropdown-item" href="music_project.html">Music Projects</a></li>
+                                    <li><a class="dropdown-item" href="indigo_game.html">Indigo Game</a></li>
+                                    <li><a class="dropdown-item" href="parks_rec.html">Parks n Rec</a></li>
+                                    <li><a class="dropdown-item" href="yocrestif.html">Yocrestif</a></li>
+                                    <li><a class="dropdown-item" href="portfolio_website.html">Portfolio Website</a></li>
+                                    <li><a class="dropdown-item" href="spark.html">Spark</a></li>
+                                    <li><a class="dropdown-item" href="gardening_game.html">Gardening Game</a></li>
+                                    <li><a class="dropdown-item" href="ability_database.html">Ability Database</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-4">Ghibli Style Game</h1>
+                        <p class="lead mb-4">A cozy exploration game inspired by Studio Ghibli films.</p>
+                        <div class="mb-4">
+                            <span class="badge bg-light text-dark me-2 fs-6">Cozy Game</span>
+                            <span class="badge bg-light text-dark me-2 fs-6">Exploration</span>
+                            <span class="badge bg-light text-dark me-2 fs-6">Singleplayer</span>
+                            <span class="badge bg-light text-dark fs-6">Relaxing</span>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <button class="btn btn-outline-light btn-lg" onclick="scrollToSection('features')">
+                                <i class="fas fa-list me-2"></i>View Features
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="icon-placeholder">
+                        <i class="fas fa-leaf fa-5x mb-3"></i>
+                        <p class="mb-0">Ghibli Inspired</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Core Features</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-paint-brush fa-2x text-primary me-3"></i>
+                                <h4 class="mb-0">Hand-Painted Art Style</h4>
+                            </div>
+                            <p class="mb-3">Visually stunning world with:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Watercolor-inspired environments</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Soft color palettes</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Detailed nature elements</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Expressive character designs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-wind fa-2x text-primary me-3"></i>
+                                <h4 class="mb-0">Relaxing Gameplay</h4>
+                            </div>
+                            <p class="mb-3">A calming experience with:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>No combat or time pressure</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Peaceful exploration</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Meditative activities</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Gentle puzzles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-dragon fa-2x text-primary me-3"></i>
+                                <h4 class="mb-0">Magical Creatures</h4>
+                            </div>
+                            <p class="mb-3">Encounters with:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Spirits and forest guardians</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Mythical creatures</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Helpful companions</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Hidden magical beings</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-music fa-2x text-primary me-3"></i>
+                                <h4 class="mb-0">Soothing Soundtrack</h4>
+                            </div>
+                            <p class="mb-3">Original music featuring:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Orchestral compositions</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Ambient nature sounds</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Dynamic music system</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Piano-focused melodies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Philosophy Section -->
+    <section id="design" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Design Philosophy</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="mb-4">Capturing the Ghibli Spirit</h4>
+                            <p>The goal of this project is to capture the essence of Studio Ghibli films in an interactive medium. Key inspirations include:</p>
+                            <ul>
+                                <li><strong>My Neighbor Totoro</strong> - The wonder of discovering magical creatures in everyday places</li>
+                                <li><strong>Spirited Away</strong> - A richly detailed world filled with spirits and wonder</li>
+                                <li><strong>Princess Mononoke</strong> - The relationship between humanity and nature</li>
+                                <li><strong>Kiki's Delivery Service</strong> - Coming of age and finding your place in the world</li>
+                            </ul>
+                            <p>The game emphasizes environmental storytelling, memorable characters, and moments of quiet beauty that allow players to simply exist in the world.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Gallery & Media</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="fas fa-images me-2"></i>Screenshots</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">Lush forest environments</li>
+                                <li class="mb-2">Peaceful village scenes</li>
+                                <li class="mb-2">Magical creature encounters</li>
+                                <li class="mb-2">Sunset and sunrise vistas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0"><i class="fas fa-film me-2"></i>Videos</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">Announcement teaser</li>
+                                <li class="mb-2">Environment showcase</li>
+                                <li class="mb-2">Music preview</li>
+                                <li class="mb-2">Developer commentary</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Portfolio Section -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h3 class="mb-4">Ready to explore more projects?</h3>
+            <a href="../index.html" class="btn btn-light btn-lg">
+                <i class="fas fa-arrow-left me-2"></i>Back to Portfolio
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Luminant. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Ghibli Style Game</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const offsetTop = section.offsetTop - 70;
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            }
+        }
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) navbar.classList.add('navbar-scrolled');
+        });
+    </script>
+</body>
+</html>

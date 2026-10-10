@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indigo - Game Project</title>
+    <link rel="icon" type="image/png" href="../Indigo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* ===== Expandable Media Cards ===== */
+        .expandable-card {
+            overflow: visible !important;
+            border-radius: 16px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .expandable-card .expandable-header {
+            cursor: pointer;
+            border-radius: 16px 16px 0 0;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .expandable-card .expandable-header:hover {
+            filter: brightness(1.15);
+        }
+
+        .expandable-card .expand-icon {
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .expandable-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Sticky header only when expanded */
+        .expandable-card.expanded .expandable-header {
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5),
+                        0 0 0 1px rgba(99, 102, 241, 0.3);
+        }
+
+        /* View switching */
+        .expandable-card .list-view { display: block; }
+        .expandable-card .gallery-view { display: none; animation: fadeGallery 0.35s ease-out; }
+        .expandable-card.expanded .list-view { display: none; }
+        .expandable-card.expanded .gallery-view { display: block; }
+
+        @keyframes fadeGallery {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Media grid */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
+        }
+
+        .media-item {
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(145deg, #1a1a25 0%, #15151f 100%);
+            border: 1px solid #1e1e2e;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .media-item:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            color: #818cf8;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2);
+        }
+
+        .media-item i {
+            font-size: 1.75rem;
+            margin-bottom: 6px;
+        }
+
+        .media-item span {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-align: center;
+            padding: 0 8px;
+            line-height: 1.2;
+        }
+
+        /* When real media is dropped in */
+        .media-item img,
+        .media-item video,
+        .media-item iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
+        }
+
+        .media-item.wide { grid-column: span 2; }
+
+        .expandable-card .card-body.gallery-view {
+            padding-top: 20px;
+        }
+
+        @media (max-width: 576px) {
+            .media-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            }
+            .expandable-card.expanded .expandable-header {
+                top: 62px;
+            }
+            .media-item.wide { grid-column: span 2; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Luminant</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="bookmarksDropdown" role="button" data-bs-toggle="dropdown">
+                            Bookmarks
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#overview">Overview</a></li>
+                            <li><a class="dropdown-item" href="#story">Story</a></li>
+                            <li><a class="dropdown-item" href="#gameplay">Gameplay</a></li>
+                            <li><a class="dropdown-item" href="#music">Music</a></li>
+                            <li><a class="dropdown-item" href="#media">Media</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../index.html">Home</a></li>
+                            <li class="dropstart">
+                                <a class="dropdown-item dropdown-toggle" href="#">Projects</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="LEP_project.html">LEP Project</a></li>
+                                    <li><a class="dropdown-item" href="magic_project.html">Spellcaster VR</a></li>
+                                    <li><a class="dropdown-item" href="music_project.html">Music Projects</a></li>
+                                    <li><a class="dropdown-item" href="ghibli_game.html">Ghibli Style Game</a></li>
+                                    <li><a class="dropdown-item" href="parks_rec.html">Parks n Rec</a></li>
+                                    <li><a class="dropdown-item" href="yocrestif.html">Yocrestif</a></li>
+                                    <li><a class="dropdown-item" href="portfolio_website.html">Portfolio Website</a></li>
+                                    <li><a class="dropdown-item" href="spark.html">Spark</a></li>
+                                    <li><a class="dropdown-item" href="gardening_game.html">Gardening Game</a></li>
+                                    <li><a class="dropdown-item" href="ability_database.html">Ability Database</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-4">Indigo</h1>
+                        <p class="lead mb-4">A narrative-driven game based on my original story and music album.</p>
+                        <div class="mb-4">
+                            <span class="badge bg-light text-dark me-2 fs-6">Action RPG</span>
+                            <span class="badge bg-light text-dark me-2 fs-6">Story-Driven</span>
+                            <span class="badge bg-light text-dark me-2 fs-6">Original Music</span>
+                            <span class="badge bg-light text-dark fs-6">Singleplayer</span>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <button class="btn btn-outline-light btn-lg" onclick="scrollToSection('gameplay')">
+                                <i class="fas fa-list me-2"></i>View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="icon-placeholder">
+                        <i class="fas fa-dragon fa-5x mb-3"></i>
+                        <p class="mb-0">Indigo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">The Story</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="lead text-center mb-4">A tale of identity, purpose, and redemption.</p>
+                    <p>Indigo follows the journey of Ko, an escaped slave. In a world where magic and STEM run the world, Ko must find peace and freedom at a utopia while bringing on a team of unpopular people.</p>
+                    <p>The story explores themes of redemption, identity, perseverance, and kindness. As players progress, they'll get accustomed to the harsh, violent world until they find peace and happiness within their friends.</p>
+                    <p>The narrative is deeply intertwined with the music, with key story moments accompanied by original compositions from the Indigo album.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gameplay Section -->
+    <section id="gameplay" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Gameplay Features</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-sword fa-2x text-primary me-3"></i>
+                                <h4 class="mb-0">Combat System</h4>
+                            </div>
+                            <p class="mb-3">Fast-paced action combat with:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Ability system and spell library</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Special abilities and ultimate attacks</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Dodge and parry mechanics</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Boss battles with unique patterns</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-book fa-2x text-primary me-3"></i>
+                                <h4 class="mb-0">Narrative Choices</h4>
+                            </div>
+                            <p class="mb-3">Shape the story through:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Meaningful dialogue choices</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Multiple characters to start with</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Character relationship system</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Multiple endings</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-map fa-2x text-primary me-3"></i>
+                                <h4 class="mb-0">World Exploration</h4>
+                            </div>
+                            <p class="mb-3">Explore a rich world with:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Interconnected level design</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Hidden secrets and collectibles</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Environmental storytelling</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Dynamic world updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-music fa-2x text-primary me-3"></i>
+                                <h4 class="mb-0">Music Integration</h4>
+                            </div>
+                            <p class="mb-3">Music as a core mechanic:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Original soundtrack by Luminant</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Dynamic music that responds to gameplay</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Story moments synced to music</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Music used in the show/story</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">The Album</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4><i class="fas fa-compact-disc me-2"></i>Indigo - Original Soundtrack</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>The Indigo album serves as both the soundtrack and the inspiration for the game. Each track corresponds to a key story moment or character theme.</p>
+                            <p>Featured tracks include:</p>
+                            <ul>
+                                <li><strong>Kuroba</strong> - The theme of Rain</li>
+                                <li><strong>The Spectacle</strong> - An epic reprise of the theme Savoy</li>
+                                <li><strong>Red Sun</strong> - An epic reprise of the theme Rouge</li>
+                                <li><strong>Scarlet Flames</strong> - The theme of Rouge</li>
+                                <li><strong>Indigo</strong> - Theme of Ko</li>
+                            </ul>
+                            <div class="mt-4">
+                                <a href="https://open.spotify.com/artist/2m5ltvhaqC6xT1imqgjpMG" class="btn btn-primary">
+                                    <i class="fab fa-spotify me-2"></i>Listen on Spotify
+                                </a>
+                                <a href="music_project.html" class="btn btn-outline-primary ms-3">
+                                    <i class="fas fa-music me-2"></i>View Music Projects
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Gallery & Media</h2>
+            <p class="text-center text-muted mb-4" style="font-size: 0.9rem;">
+                <i class="fas fa-hand-pointer me-2"></i>Tap a card to expand and view media
+            </p>
+            <div class="row g-4">
+                <!-- Screenshots Card -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm expandable-card" id="screenshots-card">
+                        <div class="card-header bg-primary text-white expandable-header"
+                             onclick="toggleExpandable('screenshots-card')"
+                             role="button" aria-expanded="false" aria-controls="screenshots-gallery">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0"><i class="fas fa-images me-2"></i>Screenshots</h5>
+                                <i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                        </div>
+
+                        <!-- Default (collapsed) view -->
+                        <div class="card-body list-view">
+                            <p class="mb-3">Experience the world of Indigo:</p>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Atmospheric environments</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Character designs inspired by the album art</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Epic boss encounters</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Story-driven cutscenes</li>
+                            </ul>
+                        </div>
+
+                        <!-- Expanded view (gallery) -->
+                        <div class="card-body gallery-view" id="screenshots-gallery">
+                            <div class="media-grid">
+                                <!-- Replace each .media-item with:
+                                     <a class="media-item" href="full-size.jpg" target="_blank">
+                                         <img src="thumb.jpg" alt="...">
+                                     </a>
+                                -->
+                                <div class="media-item"><i class="fas fa-image"></i><span>Atmospheric Environment</span></div>
+                                <div class="media-item"><i class="fas fa-image"></i><span>Character Design</span></div>
+                                <div class="media-item"><i class="fas fa-image"></i><span>Boss Encounter</span></div>
+                                <div class="media-item"><i class="fas fa-image"></i><span>Cutscene</span></div>
+                                <div class="media-item"><i class="fas fa-image"></i><span>World Vista</span></div>
+                                <div class="media-item"><i class="fas fa-image"></i><span>Combat Scene</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Videos Card -->
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm expandable-card" id="videos-card">
+                        <div class="card-header bg-info text-white expandable-header"
+                             onclick="toggleExpandable('videos-card')"
+                             role="button" aria-expanded="false" aria-controls="videos-gallery">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0"><i class="fas fa-film me-2"></i>Videos</h5>
+                                <i class="fas fa-chevron-down expand-icon"></i>
+                            </div>
+                        </div>
+
+                        <!-- Default (collapsed) view -->
+                        <div class="card-body list-view">
+                            <p class="mb-3">Watch the game in action:</p>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Announcement trailer</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Gameplay showcase</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Music video featuring game footage</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Developer diary</li>
+                            </ul>
+                        </div>
+
+                        <!-- Expanded view (video gallery) -->
+                        <div class="card-body gallery-view" id="videos-gallery">
+                            <div class="media-grid">
+                                <!-- Replace with:
+                                     <div class="media-item wide">
+                                         <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+                                     </div>
+                                -->
+                                    <div class="media-item wide"> <video src="../indigo_vid.mp4" controls></video> </div>
+
+                                <div class="media-item wide"><i class="fas fa-play-circle"></i><span>Announcement Trailer</span></div>
+                                <div class="media-item wide"><i class="fas fa-play-circle"></i><span>Gameplay Showcase</span></div>
+                                <div class="media-item wide"><i class="fas fa-play-circle"></i><span>Music Video</span></div>
+                                <div class="media-item wide"><i class="fas fa-play-circle"></i><span>Developer Diary</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Portfolio Section -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h3 class="mb-4">Ready to explore more projects?</h3>
+            <a href="../index.html" class="btn btn-light btn-lg">
+                <i class="fas fa-arrow-left me-2"></i>Back to Portfolio
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Luminant. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Indigo</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const offsetTop = section.offsetTop - 70;
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            }
+        }
+
+        // Toggle expandable media cards
+        function toggleExpandable(cardId) {
+            const card = document.getElementById(cardId);
+            if (!card) return;
+            const header = card.querySelector('.expandable-header');
+            const isExpanded = card.classList.toggle('expanded');
+            if (header) header.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (navbar && window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else if (navbar) {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

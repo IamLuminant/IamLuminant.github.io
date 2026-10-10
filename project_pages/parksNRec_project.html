@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parks n Rec Game - Project Details</title>
+    <link rel="icon" type="image/png" href="../Indigo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Luminant</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="bookmarksDropdown" role="button" data-bs-toggle="dropdown">
+                            Bookmarks
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#overview">Overview</a></li>
+                            <li><a class="dropdown-item" href="#features">Features</a></li>
+                            <li><a class="dropdown-item" href="#systems">Systems</a></li>
+                            <li><a class="dropdown-item" href="#media">Media</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../index.html">Home</a></li>
+                            <li class="dropstart">
+                                <a class="dropdown-item dropdown-toggle" href="#">Projects</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="LEP_project.html">LEP Project</a></li>
+                                    <li><a class="dropdown-item" href="magic_project.html">Spellcaster VR</a></li>
+                                    <li><a class="dropdown-item" href="music_project.html">Music Projects</a></li>
+                                    <li><a class="dropdown-item" href="indigo_game.html">Indigo Game</a></li>
+                                    <li><a class="dropdown-item" href="ghibli_game.html">Ghibli Style Game</a></li>
+                                    <li><a class="dropdown-item" href="yocrestif.html">Yocrestif</a></li>
+                                    <li><a class="dropdown-item" href="portfolio_website.html">Portfolio Website</a></li>
+                                    <li><a class="dropdown-item" href="spark.html">Spark</a></li>
+                                    <li><a class="dropdown-item" href="gardening_game.html">Gardening Game</a></li>
+                                    <li><a class="dropdown-item" href="ability_database.html">Ability Database</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-4">Parks n Rec Game</h1>
+                        <p class="lead mb-4">A management simulation game about running your own national park.</p>
+                        <div class="mb-4">
+                            <span class="badge bg-light text-dark me-2 fs-6">Simulation</span>
+                            <span class="badge bg-light text-dark me-2 fs-6">Management</span>
+                            <span class="badge bg-light text-dark me-2 fs-6">Singleplayer</span>
+                            <span class="badge bg-light text-dark fs-6">Strategy</span>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <button class="btn btn-outline-light btn-lg" onclick="scrollToSection('features')">
+                                <i class="fas fa-list me-2"></i>View Features
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="icon-placeholder">
+                        <i class="fas fa-tree fa-5x mb-3"></i>
+                        <p class="mb-0">Parks n Rec</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Core Features</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-users fa-2x text-primary me-3"></i>
+                                <h4 class="mb-0">Visitor Management</h4>
+                            </div>
+                            <p class="mb-3">Keep your visitors happy with:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Visitor satisfaction tracking</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Feedback and review system</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Special events and attractions</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Accessibility options</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-leaf fa-2x text-primary me-3"></i>
+                                <h4 class="mb-0">Conservation</h4>
+                            </div>
+                            <p class="mb-3">Balance nature and tourism:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Wildlife population management</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Habitat preservation</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Environmental impact tracking</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Education programs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-dollar-sign fa-2x text-primary me-3"></i>
+                                <h4 class="mb-0">Budget Management</h4>
+                            </div>
+                            <p class="mb-3">Run a sustainable park:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Income and expense tracking</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Grant applications</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Staff hiring and management</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Facility upgrades</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-card card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-cloud-sun fa-2x text-primary me-3"></i>
+                                <h4 class="mb-0">Dynamic Events</h4>
+                            </div>
+                            <p class="mb-3">Face unexpected challenges:</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i>Weather events</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Seasonal changes</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Animal encounters</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Special visitor requests</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Systems Section -->
+    <section id="systems" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Game Systems</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker bg-primary"></div>
+                            <div class="timeline-content">
+                                <h5 class="mb-2">Park Layout & Design</h5>
+                                <p class="text-muted mb-0">Design your park with trails, picnic areas, campsites, visitor centers, and more. Each element affects visitor satisfaction and environmental impact.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker bg-success"></div>
+                            <div class="timeline-content">
+                                <h5 class="mb-2">Wildlife Ecosystem</h5>
+                                <p class="text-muted mb-0">A simulated ecosystem where animal populations interact with each other and the environment. Your decisions affect the balance of nature.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker bg-info"></div>
+                            <div class="timeline-content">
+                                <h5 class="mb-2">Staff Management</h5>
+                                <p class="text-muted mb-0">Hire rangers, guides, maintenance workers, and administrative staff. Each has unique skills and needs that affect park operations.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker bg-warning"></div>
+                            <div class="timeline-content">
+                                <h5 class="mb-2">Research & Education</h5>
+                                <p class="text-muted mb-0">Conduct research to unlock new features, improve conservation efforts, and create educational programs for visitors.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section id="media" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Gallery & Media</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="fas fa-images me-2"></i>Screenshots</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">Park overview and layout tools</li>
+                                <li class="mb-2">Visitor feedback interface</li>
+                                <li class="mb-2">Wildlife observation mode</li>
+                                <li class="mb-2">Budget and management screens</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0"><i class="fas fa-film me-2"></i>Videos</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">Gameplay overview</li>
+                                <li class="mb-2">Park building tutorial</li>
+                                <li class="mb-2">Conservation mechanics explained</li>
+                                <li class="mb-2">Developer insights</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Portfolio Section -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h3 class="mb-4">Ready to explore more projects?</h3>
+            <a href="../index.html" class="btn btn-light btn-lg">
+                <i class="fas fa-arrow-left me-2"></i>Back to Portfolio
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Luminant. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Parks n Rec Game</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const offsetTop = section.offsetTop - 70;
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            }
+        }
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) navbar.classList.add('navbar-scrolled');
+        });
+    </script>
+</body>
+</html>
